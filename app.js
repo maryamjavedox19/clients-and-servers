@@ -1,4 +1,6 @@
 const express = require('express');    //npm package
+const morgan = require('morgan');
+
 
 // express app
 const app = express();
@@ -10,8 +12,13 @@ const app = express();
 // listen for requests
 app.listen(3000);
 
+
 // register view engine
 app.set('view engine', 'ejs');      //ejs--npm package
+
+// middleware & static files
+app.use(express.static('public'));      //to access css file etc    anything inside pub;ic is going to be available
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
 
