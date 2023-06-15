@@ -1,6 +1,6 @@
 const http = require('http');
-const fs = require('fs');
-const _ = require('lodash');
+const fs = require('fs');      //for filing
+const _ = require('lodash');    //npm package
 
 
 const server = http.createServer((req, res) => {    //this is going to send it to home page when request is made
@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {    //this is going to send it t
   greet();
   greet();
 
-  
+
 
     // set header content type
     res.setHeader('Content-Type', 'text/html');
@@ -37,6 +37,7 @@ const server = http.createServer((req, res) => {    //this is going to send it t
       break;
     case '/about-us':
       res.statusCode = 301;
+    //   redirecting
       res.setHeader('Location', '/about');
       res.end();
       break;
